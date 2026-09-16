@@ -1,0 +1,151 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+	int main() {
+
+//Exercicio 1
+		
+	char senha1[7],senha2[7];
+	
+	printf("Crie uma senha: ");
+	gets(senha1);
+	fflush(stdin);
+	
+	printf("Confirme sua senha: ");
+	gets(senha2);
+	fflush(stdin);
+	
+	
+	if (strlen(senha1) != 6 || strlen(senha2) != 6) {
+		printf("A senha deve conter exatamente 6 caracteres!");		
+		}
+	
+	else if (strcmp(senha1, senha2) == 0) {
+		printf("Senha valida!");
+	}
+	
+	else if (memcmp(senha1,senha2, 3) == 0 ) {
+		printf("Houve algum erro na digitacao!");
+	}
+	
+	else {
+		printf("\nSenha invalida!");
+	
+
+//Exercicio 2
+
+        int tamanho = 0,i;
+	char palavra[11];
+	
+	while (tamanho > 10 || tamanho < 3) {
+	
+	printf("Digite uma palavra: ");
+	gets(palavra);
+	fflush(stdin);
+	
+	tamanho = strlen(palavra);
+	
+	if(tamanho > 10 || tamanho < 3) {
+	printf("Tamanho de palavra invalida, digite novamente!\n\n");
+		}
+	}
+
+    printf("Tamanho da palavra: %i", tamanho);
+
+//Exercicio 3
+
+        int i;
+	char palavra[11];
+	
+	printf("Escreva a palavra: ");
+	gets(palavra);
+	fflush(stdin);
+	
+	printf("\nSequencia:\n\n");
+	
+	for (i = 0; i < 6; i++) {
+		printf("%c", palavra[i]);
+		printf("\n");
+	}
+
+//Exercicio 4
+
+        int i, tamanho;
+	char nome[30], sobrenome[30];
+	
+	printf("Digite seu nome: ");
+	gets(nome);
+	fflush(stdin);
+	
+	
+	printf("Digite seu sobrenome: ");
+	gets(sobrenome);
+	fflush(stdin);
+	
+	strcat(nome,sobrenome);
+	printf("\n");
+	printf(nome);
+	
+	
+	tamanho = strlen(nome);
+	printf("\nTamanho: %i", tamanho);
+
+//Exercicio 5
+
+        char caracter,i;
+	int numero = 21;
+	
+	printf("Digite um caracter: ");
+	scanf("%c", &caracter);
+	
+	while (numero > 20) {
+	
+	printf("Digite um numero: ");
+	scanf("%i", &numero);
+	
+	if (numero > 20) {
+		printf("Numero invalido, digite novamente!\n\n");
+	}
+	}
+	
+	printf("Saida: ");
+	
+	for(i = 0; i < numero; i++) {
+		printf("%c",caracter);
+	}
+
+//Exercicio 6
+
+        int i = 0;
+	int tamanho;
+	char texto[40];
+	
+	printf("Texto recebido: ");
+	gets(texto);
+        fflush(stdin);
+	
+	tamanho = strlen(texto);
+	
+	printf("Texto invertido:");
+	
+    for (i = tamanho; i >= 0; i--) {
+    	printf("%c", texto[i]);
+	}	
+	
+//Exercicio 7
+
+        int i = 0;
+	char texto[40];
+	
+	printf("Digite seu texto: ");
+	gets(texto);
+	fflush(stdin);	
+	
+	for (i = 0; texto[i] != '\0'; i++) {
+		texto[i] = toupper(texto[i]);
+		printf("%c",texto[i]);
+	}
+
+	return 0;
+}
